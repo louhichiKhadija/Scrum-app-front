@@ -7,7 +7,7 @@ import { UpdateProfileComponent } from './update-profile/update-profile.componen
 
 
 const routes: Routes = [
-  { path:'', component:ScrumComponent, children:[
+  { path:'scrum', component:ScrumComponent, children:[
       {path:'', component:HomeComponent},
       {path:'update-profile', component:UpdateProfileComponent}
   ]}

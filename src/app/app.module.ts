@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthRoutingModule } from './auth/auth-routing.module';
 
 import { AppComponent } from './app.component';
 import { AuthModule } from './auth/auth.module';
@@ -17,6 +18,7 @@ import { RouterModule } from '@angular/router';
     
     AppComponent,
     NavBarComponent,
+   
     
   ],
   imports: [
@@ -26,6 +28,7 @@ import { RouterModule } from '@angular/router';
     RouterModule,
     BrowserModule,
     AppRoutingModule,
+    AuthRoutingModule,
     AuthModule,
     ScrumModule
   ],
