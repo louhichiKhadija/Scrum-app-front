@@ -1,0 +1,17 @@
+<div class="col-md-4 centrage ">
+              <div class="card card-profile ">
+                  <div class="card-avatar toul">
+                      <a href="javascript:void(0)">
+                        
+                          <img [src]="img.src" alt="profile photo" width="150px" height="150px">
+                       </a>
+                  </div>  
+                  <div class="card-body ">
+                      <h4 class="card-title">{{users.email}}</h4>
+                      <h6 class="card-category text-gray">{{users.firstName}} </h6>
+                      <h6 class="card-category text-gray"> {{users.lastName}} </h6>
+                      <a routerLink="/update-profile" href="javascript:void(0)" class="btn btn-danger btn-round" >Update Profil</a>   
+                    </div>
+                
+              </div>
+</div>

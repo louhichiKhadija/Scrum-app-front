@@ -1,0 +1,97 @@
+<!--
+<!-Navbar
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark purple lighten-1" [containerInside]="false">
+
+    <!- Navbar brand --
+    <mdb-navbar-brand><a class="navbar-brand" href="#">Navbar</a></mdb-navbar-brand>
+  
+    <!- Collapsible content --
+    <links>
+  
+      <-- Links --
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>Pricing</a>
+        </li>
+  
+        <-- Dropdown --
+        <li class="nav-item dropdown" dropdown>
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            Basic dropdown<span class="caret"></span></a>
+          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
+            <div class="divider dropdown-divider"></div>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
+          </div>
+        </li>
+  
+      </ul>
+      !-- Links --
+  
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link">1 <mdb-icon fas icon="envelope"></mdb-icon></a>
+        </li>
+        <li class="nav-item avatar dropdown" dropdown>
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            <img src="https://mdbootstrap.com/img/Photos/Avatars/avatar-2.jpg" alt="" class="img-fluid rounded-circle z-depth-0"></a>
+          <div *dropdownMenu class="dropdown-menu dropdown-menu-right dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">My account</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect href="#">Log out</a>
+          </div>
+        </li>
+      </ul>
+    </links>
+    <!- Collapsible content --
+  
+  </mdb-navbar>
+  <!-/.Navbar--
+-->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+    <a class="navbar-brand" routerLink="/home">Project<span>.</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto">
+        
+        <li class="nav-item active" ><a routerLink="/home" class="nav-link">name project</a></li>
+        <li><span class="vertical-line"></span></li>
+        <li class="nav-item" *ngIf="!isuser"><a routerLink="/articles" class="nav-link">user</a></li>
+        <li><span class="vertical-line"></span></li>
+        <li class="nav-item" *ngIf="!isuser"><a routerLink="/addarticle" class="nav-link"></a></li>
+        <li><span class="vertical-line"></span></li>
+        <li class="nav-item" *ngIf="!isuser"><a routerLink="/myarticles" class="nav-link"></a></li>
+        <li><span class="vertical-line"></span></li>
+        <li class="nav-item" *ngIf="!isuser"><a routerLink="/profil" class="nav-link"></a></li>
+        <li><span class="vertical-line"></span></li>
+        <li class="nav-item"><a routerLink="/contact" class="nav-link">Contact</a></li>
+        <li class="nav-item" *ngIf="!isuser">
+            <button class="btn btn-danger" routerLink="/home"  (click)="out()">out</button>
+          </li>
+          <li><span class="vertical-line"></span></li>
+       <li class="nav-item"*ngIf="isuser"><a routerLink="/login" class="nav-link">login</a></li>  
+       <li class="nav-item"*ngIf="isuser"><a routerLink="/registre" class="nav-link">sign up</a></li> 
+       <li class="nav-item" *ngIf="!isuser" >
+        <a class="nav-link" routerLink="/profil" routerLinkActive="active"> hello:{{username}} <i class="icon-heart color-danger" aria-hidden="true"></i> </a>
+      </li> 
+
+  
+    
+       
+      </ul>
+    </div>
+  </div>
+</nav>
+

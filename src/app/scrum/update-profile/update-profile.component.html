@@ -1,1 +1,123 @@
-<p>update-profile works!</p>
+
+<div class="main-content centrage" id="global">
+  <div class="container-fluid centrage">
+      <div class="row">
+          <div class="col-md-8 ">
+              <div class="card centrage">
+                  <div class="card-header card-header-danger ">
+                      <h4 class="card-title">{{users.firstName}} </h4>
+
+                  
+                      <p class="card-category">Complete your profile</p>
+                  </div>
+                  <div class="card-body  ">
+                    <form  >
+                        <div class="card card-profile ">
+                            <div class="card-avatar">
+                             <a href="javascript:void(0)">
+                                  <img  class="img" [src]="img.src" />
+                                </a>
+                                  
+     
+                            </div>
+                        
+                            <form [formGroup]="addUserForm">
+              
+                                <input     type="file" class="fas  fa-camera  "   (change)="handleImage($event)">
+                                
+                              </form>
+                          </div>
+                        <div class="row">     
+                            <div class="col-md-4">
+                                <mat-form-field [formGroup]="addUserForm"  class="example-full-width">
+                                  <input matInput placeholder="Email address"  type="email"  name="email"  formControlName="email"  value="{{users.email}}">
+                                  <mat-error *ngIf="addUserForm.hasError('required', 'email')">
+                                    Email is required *
+                                </mat-error>
+                                
+                                <mat-error *ngIf="addUserForm.hasError('email', 'email')">
+                                  Please enter a valid email
+                                </mat-error>
+                                </mat-form-field>
+                            </div>
+                        
+                        </div>
+                          <div class="row">
+                              <div class="col-md-6">
+                                <mat-form-field  [formGroup]="addUserForm" class="example-full-width">
+                                  <input formControlName="firstName"   matInput placeholder="First Name"  name="firstName"  value="{{users.firstName}}"  type="text">
+                               
+                                  <mat-error *ngIf="addUserForm.hasError('required', 'firstName')">
+                                    FirstName is required *
+                                 </mat-error>
+                                </mat-form-field>
+                              </div>
+                              <div class="col-md-6">
+                                <mat-form-field [formGroup]="addUserForm" class="example-full-width">
+                                  <input  formControlName="lastName" matInput placeholder="Last Name"  value="{{users.lastName}}" name="lastName"  type="text">
+                                  <mat-error *ngIf="addUserForm.hasError('required', 'lastName')">
+                                    LastName is required *
+                                </mat-error>
+                                </mat-form-field>
+                              </div>
+                             
+
+                              <div>
+                                <mat-form-field [formGroup]="addUserForm" appearance="outline" style="width: 100%" [color]="passwordComponent.color">
+                                            <mat-label>Password</mat-label>
+                                            <mat-pass-toggle-visibility #toggleVisbility matSuffix></mat-pass-toggle-visibility>
+  
+                                            <input matInput #password
+                                            [type]="toggleVisbility.type"
+                                                   required
+                                                   placeholder="Password"
+                                                  name="password"
+                                                  formControlName="password">
+                                            <mat-hint align="end" aria-live="polite">
+                                              {{password.value.length}} / 8
+                                            </mat-hint>
+                                          </mat-form-field>
+                                
+                                          <mat-password-strength #passwordComponent
+                                                                class="green"
+                                                                 
+                                                                 [password]="password.value"
+                                                                 >
+                                          </mat-password-strength>
+                                          <mat-password-strength-info [passwordComponent]="passwordComponent">
+                                          </mat-password-strength-info>
+                                   </div>
+
+
+
+
+
+                          </div>                       
+                          
+                        
+                          <button mat-raised-button type="submit" class="btn btn-danger pull-right"  (click)="updateUser()" >Update Profile</button>
+                          <div class="clearfix"></div>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          
+             
+    
+                  
+
+
+                   
+      
+       
+
+       
+         
+              
+
+      </div>
+  </div>
+</div>
+
+
+  

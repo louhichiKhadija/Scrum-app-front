@@ -10,24 +10,44 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import {HttpClientModule} from '@angular/common/http';
+import { MatPasswordStrengthModule } from '@angular-material-extensions/password-strength';
+import { FooterComponent } from './footer/footer.component';
+import { NavBarProjectComponent } from './nav-bar-project/nav-bar-project.component';
+import { HomeProjectComponent } from './scrum/home-project/home-project.component';
 
-
+import { MatSliderModule } from '@angular/material';
+import {MatCardModule} from '@angular/material';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+import { NavbarModule, WavesModule, ButtonsModule, MDBBootstrapModule } from 'angular-bootstrap-md'
 @NgModule({
   declarations: [
-    
+
     AppComponent,
     NavBarComponent,
+    FooterComponent,
+    NavBarProjectComponent,
+  
     
   ],
   imports: [
+    NavbarModule,
+    WavesModule,
+    ButtonsModule,
+    MDBBootstrapModule.forRoot(),
+    DragDropModule,
+    MatCardModule,
     BrowserAnimationsModule,
-    FormsModule,
+    MatSliderModule,
     ReactiveFormsModule,
     RouterModule,
     BrowserModule,
     AppRoutingModule,
     AuthModule,
-    ScrumModule
+    ScrumModule,
+    HttpClientModule,
+    MatPasswordStrengthModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
