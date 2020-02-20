@@ -3,13 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { ScrumComponent } from './scrum.component';
 import { UpdateProfileComponent } from './update-profile/update-profile.component';
+import { ProjectComponent } from './project/project.component';
 
 
 
 const routes: Routes = [
   { path:'scrum', component:ScrumComponent, children:[
       {path:'', component:HomeComponent},
-      {path:'update-profile', component:UpdateProfileComponent}
+      {path:'update-profile', component:UpdateProfileComponent},
+      { path: 'projects', component: ProjectComponent }
   ]}
 ];
 

@@ -1,8 +1,20 @@
 
+<mat-drawer-container class="example-container" >
+    <mat-drawer #drawer class="example-sidenav" mode="side" opened >
   <div class="sidebar" data-color="danger" data-background-color="white" data-image="./assets/img/sidebar-1.jpg">
     <app-sidebar></app-sidebar>
     <div class="sidebar-background" style="background-image: url(./assets/img/sidebar-4.jpg)"></div>
   </div>
+  </mat-drawer>
 
+
+  <div class="example-sidenav-content">
+    <button type="button" class="btn btn-round btn-white btn-fill btn-just-icon"   (click)="drawer.toggle()">
+      <i class="material-icons visible-on-sidebar-regular">more_vert</i>
+      <i class="material-icons visible-on-sidebar-mini">view_list</i>
+    </button>
+  </div>
+
+</mat-drawer-container>
 
 <router-outlet></router-outlet>

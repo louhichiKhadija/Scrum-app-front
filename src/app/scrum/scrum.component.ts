@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./scrum.component.css']
 })
 export class ScrumComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {
