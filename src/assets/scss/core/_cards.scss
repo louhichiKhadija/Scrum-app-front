@@ -249,6 +249,12 @@
         @include shadow-big-color($brand-success);
     }
 
+    .card-header-cyan .card-icon,
+    .card-header-cyan:not(.card-header-icon):not(.card-header-text),
+    .card-header-cyan .card-text{
+        background:#00B2B2;
+    }
+
     [class*="card-header-"],
     &[class*="bg-"]{
         color: $white-color;

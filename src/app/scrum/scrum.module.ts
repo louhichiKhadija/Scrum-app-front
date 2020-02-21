@@ -1,10 +1,16 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { MatSidenavModule} from '@angular/material/sidenav';
+
+import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { HomeComponent } from './home/home.component';
 import { ScrumComponent } from './scrum.component';
+import { SidebarComponent } from '../sidebar/sidebar.component';
 import { ScrumRoutingModule } from './scrum-routing.module';
-import {MatCardModule} from '@angular/material';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { MatCardModule, MatIconModule} from '@angular/material';
+import { DragDropModule} from '@angular/cdk/drag-drop';
+import { ProjectComponent } from './project/project.component';
+
 
 import { MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
@@ -19,18 +25,24 @@ import { ReactiveFormsModule} from '@angular/forms';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
-import { UpdateProfileComponent } from './update-profile/update-profile.component';
 import { HomeProjectComponent } from './home-project/home-project.component';
+import { CreateSprintComponent } from './create-sprint/create-sprint.component';
+import { AddTaskComponent } from './add-task/add-task.component'
 
 @NgModule({
   declarations: [
     ScrumComponent,
     UpdateProfileComponent,
-   UserDetailsComponent, 
+    UserDetailsComponent, 
     HomeComponent,
-    HomeProjectComponent
-  ],
+    HomeProjectComponent, 
+    SidebarComponent,
+    CreateSprintComponent,
+    ProjectComponent,
+    AddTaskComponent
 
+    
+  ],
   imports: [
     ScrumRoutingModule,
     CommonModule,
@@ -44,7 +56,12 @@ import { HomeProjectComponent } from './home-project/home-project.component';
     FormsModule,
     ReactiveFormsModule,
     MatCardModule,
-    DragDropModule
+    DragDropModule, 
+    ScrumRoutingModule,
+    CommonModule,
+    MatSidenavModule,
+    MatIconModule
+    
   ]
 })
 export class ScrumModule { }

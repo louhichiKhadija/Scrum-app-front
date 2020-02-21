@@ -1,17 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule  } from '@angular/common/http'
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthComponent } from './auth.component';
 import { AuthRoutingModule } from './auth-routing.module';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
-
 import { MatButtonModule} from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatRippleModule } from '@angular/material/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatSelectModule} from '@angular/material/select';
+import { MatIconModule } from '@angular/material/icon'; 
+
+import { ResetPasswordMailComponent } from './reset-password-mail/reset-password-mail.component';
+
+import { MatchValueDirective } from '../directives/must-match.directive';
+import { MatDialogModule } from '@angular/material'
+
+import { MatCardModule } from '@angular/material/card';
+
 
 
 
@@ -22,7 +33,9 @@ import { MatSelectModule} from '@angular/material/select';
     AuthComponent,
     LoginComponent,
     RegisterComponent,
-    ResetPasswordComponent],
+    ResetPasswordComponent,
+    ResetPasswordMailComponent,
+    MatchValueDirective],
 
   imports: [
     AuthRoutingModule,
@@ -32,7 +45,16 @@ import { MatSelectModule} from '@angular/material/select';
     MatRippleModule,
     MatFormFieldModule,
     MatTooltipModule,
-    MatSelectModule
-  ]
+    MatSelectModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    FormsModule,
+    MatIconModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatDialogModule,
+    MatCardModule 
+  ],
+  entryComponents: [LoginComponent],
 })
 export class AuthModule { }
